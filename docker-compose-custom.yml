@@ -1,7 +1,7 @@
 version: '3'
 services:
   www:
-    image: wasserball/docker-static-html-with-htaccess
+    image: wasserball/docker-static-html-with-basic-auth
     ports:
       - '80:80'
     environment:
