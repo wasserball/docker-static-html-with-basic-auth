@@ -1,0 +1,6 @@
+version: '3'
+services:
+  www:
+    build: .
+    ports:
+      - "80:80"
