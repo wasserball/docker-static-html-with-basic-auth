@@ -26,24 +26,40 @@ or use the pre built version (`docker-compose-custom.yml`)
 - !!! you have to replace (escape) every `$` with `$$`
 
 ```
-'root:$1$qoTrIqHu$JNSTlAb2ujbqDumGaKTpL0'
+root:$1$qoTrIqHu$JNSTlAb2ujbqDumGaKTpL0
 will be
-'root:$$1$$qoTrIqHu$$JNSTlAb2ujbqDumGaKTpL0'
+root:$$1$$qoTrIqHu$$JNSTlAb2ujbqDumGaKTpL0
+
+
+----
+----
+
+or
+
+un: root
+pw: pMWDfigNqvmnDouez6RN
+
+from  
+root:$1$iGoV]ccv$al2Yxql/iYA85YSwsjDYm0
+to
+root:$$1$$iGoV]ccv$$al2Yxql/iYA85YSwsjDYm0
+
 ```
 
 ```
 version: '3'
 services:
   www:
-    image: wasserball/docker-static-html-with-htaccess
+    #image: wasserball/docker-static-html-with-basic-auth
+    build: .
     ports:
       - '80:80'
     environment:
-      - DEBUG=1
-      - HTPASSWD='root:$$1$$qoTrIqHu$$JNSTlAb2ujbqDumGaKTpL0'
+      - HTPASSWD=root:$$1$$iGoV]ccv$$al2Yxql/iYA85YSwsjDYm0
     volumes:
       #- ".htpasswd:/etc/nginx/.htpasswd" # can be used to replace the PW if you are not using the environment var
       - "./build:/usr/share/nginx/www"
+
 ```
 
 
