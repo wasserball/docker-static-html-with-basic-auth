@@ -26,25 +26,27 @@ or use the pre built version (`docker-compose-custom.yml`)
 - !!! you have to replace (escape) every `$` with `$$`
 
 ```
+example 1:
 root:$1$qoTrIqHu$JNSTlAb2ujbqDumGaKTpL0
 will be
 root:$$1$$qoTrIqHu$$JNSTlAb2ujbqDumGaKTpL0
-
-
-----
+```
 ----
 
-or
-
+```
+example 2:
 un: root
 pw: pMWDfigNqvmnDouez6RN
 
-from  
 root:$1$iGoV]ccv$al2Yxql/iYA85YSwsjDYm0
-to
+will be
 root:$$1$$iGoV]ccv$$al2Yxql/iYA85YSwsjDYm0
 
 ```
+
+## Example:
+
+run `docker-compose -f docker-compose-custom.yml up`
 
 ```
 version: '3'
@@ -63,4 +65,4 @@ services:
 ```
 
 
-run  `docker-compose -f docker-compose-custom.yml up`
+
