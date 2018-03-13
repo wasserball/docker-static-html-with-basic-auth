@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Protected Area"
+AuthUserFile /etc/nginx/.htpasswd
+Require valid-user
