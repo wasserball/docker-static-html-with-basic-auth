@@ -37,12 +37,13 @@ services:
   www:
     image: wasserball/docker-static-html-with-htaccess
     ports:
-      - "80:80"
+      - '80:80'
     environment:
-      HTPASSWD: 'root:$1$qoTrIqHu$JNSTlAb2ujbqDumGaKTpL0'
+      - DEBUG=1
+      - HTPASSWD='root:$$1$$qoTrIqHu$$JNSTlAb2ujbqDumGaKTpL0'
     volumes:
       #- ".htpasswd:/etc/nginx/.htpasswd" # can be used to replace the PW if you are not using the environment var
-      - "build:/usr/share/nginx/www"
+      - "./build:/usr/share/nginx/www"
 ```
 
 

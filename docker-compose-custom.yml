@@ -3,7 +3,7 @@ services:
   www:
     image: wasserball/docker-static-html-with-htaccess
     ports:
-      - "80:80"
+      - '80:80'
     environment:
       - DEBUG=1
       - HTPASSWD='root:$$1$$qoTrIqHu$$JNSTlAb2ujbqDumGaKTpL0'
